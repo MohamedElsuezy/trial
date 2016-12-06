@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Startups News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-bg">
+  <button ion-item *ngFor="let one of news" (click)="openCard($event, one)" >
+      <ion-card>
+        <img src={{one.img}}/>
+        <ion-card-content>
+          <h2 class="card-head">
+            {{one.headline}}
+          </h2>
+          <p>
+            {{one.intro}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+  </button>
+</ion-content>

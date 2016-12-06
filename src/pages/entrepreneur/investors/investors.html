@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Investors list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Most Relevant Startups
+    </ion-list-header>
+    <button ion-item *ngFor="let investor of investors" (click)="itemTapped($event, investor)">
+
+        <ion-avatar item-left>
+          <img [src]="investor.img">
+        </ion-avatar>
+        <h2>{{investor.name}}</h2>
+        <h3>{{investor.details}}</h3>
+        <p>{{investor.note}}</p>
+
+    </button>
+  </ion-list>
+</ion-content>

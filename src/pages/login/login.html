@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="userProfile">
+  <img [src]="userProfile.photoURL"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{ userProfile.displayName }}
+    </ion-card-title>
+    <p>
+      The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
+    </p>
+  </ion-card-content>
+</ion-card>
+  <img *ngIf="!userProfile" src="assets/img/card-amsterdam.png" class="auth-img">
+
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
+        placeholder="Your email address"
+        [class.invalid]="!loginForm.controls.email.valid &&
+          (emailChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
+      (emailChanged || submitAttempt)">
+      <p>Please enter a valid email.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input #password formControlName="password" type="password"
+        (change)="elementChanged(password)"
+        placeholder="Your password"
+        [class.invalid]="!loginForm.controls.password.valid &&
+          (passwordChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
+      (passwordChanged || submitAttempt)">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <button ion-button block>
+      Login
+    </button>
+
+  </form>
+  <button ion-button center big (click)="facebookLogin()">
+    Log In with Facebook
+  </button>
+
+  <button ion-button left clear (click)="navtoinvestorsform()">
+    I am an investor
+  </button>
+  <button ion-button right clear (click)="navtostartupsform()">
+    I am a startup
+  </button>
+
+</ion-content>

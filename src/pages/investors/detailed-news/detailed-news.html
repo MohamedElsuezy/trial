@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectednew">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectednew.headline}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="cards-bg">
+
+  <ion-card>
+
+    <img src={{selectednew.img}}/>
+
+    <ion-card-content>
+      <h2 class="card-title">
+        {{selectednew.headline}}
+      </h2>
+      <p>
+        {{selectednew.content}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='star'></ion-icon>
+          Bookmark
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='contact'></ion-icon>
+          Contact
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small (tap)=share($event) color="primary" icon-left>
+          <ion-icon name='share-alt'></ion-icon>
+           {{number}}Share
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>

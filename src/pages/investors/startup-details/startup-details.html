@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedstartup">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedstartup.name}} Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="cards-bg">
+
+  <ion-card>
+
+    <img src={{selectedstartup.img}}/>
+
+    <ion-card-content>
+      <h2 class="card-title">
+        <b>{{selectedstartup.name}}</b>
+      </h2>
+      <i>{{selectedstartup.note}}</i>
+      <p style="margin-top:20px">
+        {{selectedstartup.content}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+<!-- <ion-content>
+ <div *ngIf="selectedstartup"  class="selection">
+    <b>{{selectedstartup.name}}</b>
+    <img src="{{selectedstartup.img}}"/>
+
+    <div>
+      You navigated here from <b>{{selectedstartup.name}}</b>
+    </div>
+  </div> -->
+</ion-content>

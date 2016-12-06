@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Startups list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Most Relevant Startups
+    </ion-list-header>
+    <button ion-item *ngFor="let startup of startups" (click)="itemTapped($event, startup)">
+      <!-- <ion-item> -->
+        <ion-avatar item-left>
+          <img src={{startup.img}}>
+        </ion-avatar>
+        <h2>{{startup.name}}</h2>
+        <h3>{{startup.details}}</h3>
+        <p>{{startup.note}}</p>
+      <!-- </ion-item> -->
+    </button>
+  </ion-list>
+</ion-content>

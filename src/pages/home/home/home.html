@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Businet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <img src="assets/img/card-amsterdam.png"/>
+    <div class="card-title">Welcome to your one stop business centre</div>
+    <div class="card-subtitle">A place where investors and startups business perfectly match</div>
+    <div class="question">Are you?</div>
+    <button class="button-right" ion-button color="secondary" round (click)=navtoinvestorsform()>Investor</button>
+    <button class="button-left" ion-button color="secondary" round (click)=navtostartupsform()>Startup</button>
+    <!-- <button  ion-button clear>Primary Clear</button>
+    <button  ion-button color="secondary" clear>Secondary Clear</button> -->
+
+</ion-content>
